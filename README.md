@@ -44,7 +44,7 @@ cp .env.example .env
 ```
 ### Environment variables (`.env`)
 ```env
-DATABASE_URL="mysql://root:Atul123@%40@localhost:3306/saas_boilerplate"
+DATABASE_URL="mysql://root:*****@%40@localhost:3306/saas_boilerplate"
 JWT_SECRET="your‑strong‑secret"
 NEXT_PUBLIC_BASE_URL="http://localhost:3000"
 ```
