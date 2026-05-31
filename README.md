@@ -74,8 +74,33 @@ Open the URL and you’ll see the **premium dashboard** (see screenshot above). 
 
 ---
 
-## 📂 Folder Structure
+# 📂 Folder Structure
+```text
+src/
+├─ app/                # Next.js App Router pages
+│   ├─ api/            # Auth, user, admin endpoints
+│   ├─ admin/          # Admin panel UI
+│   ├─ dashboard/      # Premium dashboard UI
+│   ├─ profile/        # Profile page UI
+│   ├─ login/          # Login page UI
+│   ├─ signup/          # Signup page UI
+│   ├─ verify-email/    # Email verification UI
+│   └─ layout.tsx      # Global layout with navigation
+├─ components/        # Re‑usable UI components (Header, LogoutButton, UI kit)
+│   ├─ header.tsx
+│   ├─ logout-button.tsx
+│   └─ ui/            # Small building‑block components (Button, Card, Input, Badge)
+├─ lib/                # Utilities (auth helpers, prisma client, audit logger)
+├─ prisma/             # Prisma schema + migrations
+│   ├─ schema.prisma
+│   └─ migrations/
+│       ├─ 20260531192327_init/
+│       └─ 20260531201223_add_audit_and_reset/
+├─ public/             # Static assets (fonts, images, SVGs)
+├─ styles/             # Global CSS, design tokens
+└─ middleware.ts       # Role‑based protection middleware
 ```
+
 src/
 ├─ app/                # Next.js App Router pages
 │   ├─ api/            # Auth, user, admin endpoints
