@@ -57,8 +57,8 @@ export default async function DashboardPage() {
   ];
 
   return (
-    <div className="space-y-8">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div className="space-y-6">
+      <div className="flex items-center justify-between rounded-lg border bg-white p-6 shadow-sm">
         <div className="flex items-center gap-4">
           {user.image ? (
             // eslint-disable-next-line @next/next/no-img-element

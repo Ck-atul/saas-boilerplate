@@ -18,10 +18,11 @@ export async function GET(request: Request) {
 
   if (!user) {
     return NextResponse.json(
-      { error: "Invalid or expired verification link." },
+      { error: "Invalid or expired verification token." },
       { status: 400 }
     );
   }
+
 
   await prisma.user.update({
     where: { id: user.id },

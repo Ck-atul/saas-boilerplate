@@ -1,6 +1,6 @@
 # SaaS Boilerplate
 
-![Dashboard preview](file:///C:/Users/Dell/.gemini/antigravity-ide/brain/d5013e15-1217-44be-bb10-708a73023d0d/dashboard_mockup_1780259153680.png)
+[![Dashboard preview](file:///C:/Users/Dell/.gemini/antigravity-ide/brain/d5013e15-1217-44be-bb10-708a73023d0d/dashboard_mockup_1780259153680.png)](http://localhost:3000/dashboard)
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)  
 [![Node.js](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](https://nodejs.org/)  
