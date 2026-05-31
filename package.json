@@ -3,19 +3,37 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "echo \"No start script\""
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@prisma/adapter-mariadb": "^7.8.0",
     "@prisma/client": "^7.8.0",
+    "@radix-ui/react-slot": "^1.2.4",
     "bcryptjs": "^3.0.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "jose": "^6.2.3",
     "jsonwebtoken": "^9.0.3",
+    "lucide-react": "^1.17.0",
+    "mariadb": "^3.5.2",
+    "mysql2": "^3.22.4",
+    "next": "latest",
+    "nodemailer": "^8.0.10",
     "prisma": "^7.8.0",
+    "react": "latest",
+    "react-dom": "latest",
     "react-hook-form": "^7.77.0",
+    "tailwind-merge": "^3.6.0",
     "zod": "^4.4.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^20",
+    "@types/nodemailer": "^8.0.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
