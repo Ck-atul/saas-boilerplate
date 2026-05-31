@@ -11,25 +11,25 @@ export default function SignupPage() {
     email: "",
     mobile: "",
     password: "",
+    role: "USER",
+    adminCode: "",
   });
   const [msg, setMsg] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setMsg("");
     setLoading(true);
-
     try {
       const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-
       const data = await res.json();
       if (res.ok) {
         window.location.assign(
@@ -49,7 +49,7 @@ export default function SignupPage() {
     <section className="mx-auto max-w-md">
       <h1 className="mb-1 text-2xl font-bold">Sign up</h1>
       <p className="mb-6 text-sm text-gray-600">
-        Already have an account?{" "}
+        Already have an account?{' '}
         <Link href="/login" className="text-indigo-600 hover:underline">
           Log in
         </Link>
@@ -92,6 +92,25 @@ export default function SignupPage() {
           value={form.password}
           onChange={handleChange}
         />
+        <select
+          name="role"
+          className="w-full rounded border border-gray-300 p-2 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+          value={form.role}
+          onChange={handleChange}
+        >
+          <option value="USER">User</option>
+          <option value="ADMIN">Admin</option>
+        </select>
+        {form.role === "ADMIN" && (
+          <input
+            name="adminCode"
+            placeholder="Admin registration code"
+            required
+            className="w-full rounded border border-gray-300 p-2 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+            value={form.adminCode}
+            onChange={handleChange}
+          />
+        )}
         <button
           type="submit"
           disabled={loading}
